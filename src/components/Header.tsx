@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useCart } from "./../context/CartContext";
 import { ShoppingBag, HeartPulse, PhoneCall } from "lucide-react";
 
@@ -15,28 +16,26 @@ export default function Header() {
       <div className="w-full bg-pink-600 text-white text-xs py-2 px-4 flex justify-between items-center font-medium tracking-wide">
         <div className="flex items-center gap-2">
           <HeartPulse className="w-3.5 h-3.5 animate-pulse" />
-          <span>Authorized Clinical & Lab Supplier</span>
+          <span>Authorized Medical devices & clinical Lab Supplier</span>
         </div>
         <div className="flex items-center gap-1.5">
           <PhoneCall className="w-3 h-3" />
-          <span>Support: +254 700 000000</span>
+          <span>Support: +255 787 594 111</span>
         </div>
       </div>
-
       {/* Main Navigation Row */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
-        {/* Brand Logo Identity */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="bg-pink-50 p-2.5 rounded-xl border border-pink-200 group-hover:bg-pink-100 transition-colors">
-            <HeartPulse className="w-7 h-7 text-pink-600" />
-          </div>
-          <div>
-            <span className="text-xl font-bold tracking-tight text-slate-900 block leading-none">
-              RINDA
-            </span>
-            <span className="text-xs font-semibold uppercase tracking-widest text-pink-600 block mt-1">
-              DIAGNOSTICS
-            </span>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex justify-between items-center">
+        {/* Expanded High-Fidelity Logo Identity Module */}
+        <Link href="/" className="flex items-center group transform hover:scale-[1.01] transition-transform">
+          <div className="relative w-72 sm:w-80 md:w-96 h-16 sm:h-20 md:h-24">
+            <Image 
+              src="/logo.png" 
+              alt="Rinda Diagnostics Logo" 
+              fill
+              priority
+              sizes="(max-w-7xl) 384px, 96px"
+              className="object-contain object-left"
+            />
           </div>
         </Link>
 
@@ -57,7 +56,7 @@ export default function Header() {
             <ShoppingBag className="w-4 h-4 text-pink-600 group-hover:scale-110 transition-transform" />
             <span className="hidden md:inline">Order Basket</span>
             
-            {/* Live Pill Tally Notification */}
+            {/* Live Tally Notification */}
             {totalItems > 0 && (
               <span className="absolute -top-2 -right-2 bg-pink-600 text-white font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center animate-bounce shadow-md border-2 border-white">
                 {totalItems}

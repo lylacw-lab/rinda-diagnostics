@@ -1,14 +1,15 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { HeartPulse, ShieldCheck, Truck, Award } from "lucide-react";
+import { ShieldCheck, Truck, Award } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-900 text-slate-300 border-t-4 border-pink-600">
+    <footer className="bg-slate-900 text-slate-300 border-t-4 border-pink-600 mt-auto">
       {/* Trust & Compliance Value Bar */}
       <div className="border-b border-slate-800 bg-slate-900/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
@@ -44,31 +45,36 @@ export default function Footer() {
 
       {/* Main Structural Information Columns */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
-        {/* Brand Summary Column */}
-        <div className="space-y-4">
-          <div className="flex items-center gap-2">
-            <HeartPulse className="w-6 h-6 text-pink-500" />
-            <span className="text-lg font-bold text-white tracking-tight">
-              RINDA <span className="text-pink-500 text-sm font-semibold tracking-wider">DIAGNOSTICS</span>
-            </span>
+        {/* Brand Summary Column with EXPANDED Corporate Logo Image Layout */}
+        <div className="space-y-4 flex flex-col items-start">
+          <div className="relative w-64 sm:w-72 md:w-80 h-16 sm:h-20 bg-white/5 p-2 rounded-xl border border-white/10 backdrop-blur-sm shadow-inner">
+            <Image 
+              src="/logo.png" 
+              alt="Rinda Diagnostics Logo Footer" 
+              fill
+              sizes="(max-w-7xl) 320px, 80px"
+              className="object-contain object-left p-1"
+            />
           </div>
-          <p className="text-xs leading-relaxed text-slate-400">
-            A leading premium medical logistics partner providing healthcare centers, universities, and commercial laboratories with high-fidelity analytical infrastructure and daily consumables.
+          <p className="text-xs font-black text-pink-400 uppercase tracking-widest leading-none pl-1">
+            YOUR HEALTH OUR CONCERN
+          </p>
+          <p className="text-xs leading-relaxed text-slate-400 pl-1">
+            A leading premium medical Supplies partner providing healthcare centers, universities, and commercial laboratories with high-fidelity analytical infrastructure and daily consumables.
           </p>
         </div>
-
-        {/* Dispatch Headquarters & Contact Column */}
+                {/* Dispatch Headquarters & Contact Column */}
         <div className="space-y-3">
           <h3 className="text-white font-bold text-sm tracking-wide uppercase border-b border-slate-800 pb-2">
             Supply Headquarters
           </h3>
           <p className="text-xs text-slate-400 leading-relaxed">
             Rinda Diagnostics Distribution Hub<br />
-            Mombasa Road Commercial Zone, Suite 4B<br />
-            Nairobi, Kenya
+            Calila Plaza,Mikwambe 1st floor<br />
+            Kigamboni, Dar es salaam, Tanzania
           </p>
           <p className="text-xs text-pink-400 font-medium pt-1">
-            Orders: procurement@rinda-diagnostics.com
+            Orders: rindadiagnostix@gmail.com
           </p>
         </div>
 
